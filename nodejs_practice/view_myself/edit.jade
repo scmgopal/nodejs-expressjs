@@ -1,0 +1,18 @@
+doctype html
+html
+	head
+		meta(charset = 'utf-8')
+	body
+		h1 수정
+		article
+			form(action='/topic/'+topics.id+'/edit',method='post')
+				p
+					input(type='text' name='title', placeholder = 'title' value=topics.title)
+				p
+					textarea(name='description' placeholder = 'description')=topics.description
+				p
+					input(type='text' name='author', placeholder = 'author' value=topics.author)
+				p
+					input(type='submit')
+
+	

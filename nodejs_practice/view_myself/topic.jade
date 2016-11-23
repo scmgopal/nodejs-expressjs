@@ -1,0 +1,35 @@
+doctype html
+html
+	head
+		meta(charset = 'utf-8')
+	body
+
+		if user
+			p hello, #{user.displayName}
+			a(href='/auth/logout') logout
+				
+		else
+			h2 
+				a(href='/auth/login') login 
+			h2 
+				a(href='/auth/register') register
+		
+		h1 node.js 혼자서 공부하기
+		ul
+			each topic in topics
+				li
+					a(href='/topic/'+topic.id) #{topic.title}
+
+		if title
+			h1 #{title}
+			p #{description}
+			p 
+				a(href='/topic/'+id+'/edit') edit
+			p 
+				a(href='/topic/'+id+'/delete') delete
+		else
+			| thanks for coming along
+
+
+		p
+			a(href='/add') add
